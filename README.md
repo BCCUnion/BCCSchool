@@ -13,3 +13,10 @@
 - 徐肯：NO.6 Main
 - 张昊：NO.7 Backend
 - 朱龙威：NO.8 Design & Integration
+
+## 仓库使用说明
+
+1. fork到自己的仓库
+2. 按照样例仓库新建自己的文件夹（避免冲突）
+3. 开发
+4. 完成后pull request
