@@ -12,7 +12,7 @@
 - 张涵健：[NO.5 Entertainment](frontend/entertainment/README.md)
 - 徐肯：NO.6 Main
 - 张昊：NO.7 Backend
-- 朱龙威：NO.8 Design & Integration
+- 朱龙威：[NO.8 Design & Integration](front/design & integration/README.md)
 
 ## 仓库使用说明
 
