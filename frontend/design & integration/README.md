@@ -9,38 +9,6 @@
 
 2020.7.21
 
-## 框架设计
-
-本项目为轻量级网页应用开发项目,使用vue-cli脚手架进行单页面开发
-
-[教程地址](<https://cli.vuejs.org/zh/>)
-
-vue简单使用
-
-1. 使用npm安装webpack和vue-cli脚手架
-
-   ```
-   npm install webpack -g
-   npm install -g vue-cli
-   ```
-
-2. 创建并启动项目
-
-   ```
-   vue init webpack my-project
-   npm run dev
-   ```
-
-3. 开发完成后打包项目
-
-   ```
-   npm run build
-   ```
-
-项目目录介绍
-
-![1595298549658](img/1595298549658.png)
-
 ## 设计规范
 
 主题色:
