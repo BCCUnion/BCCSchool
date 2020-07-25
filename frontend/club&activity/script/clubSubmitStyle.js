@@ -1,15 +1,20 @@
 window.onload=function(){
     document.getElementById('submit').onclick = function(){
+        
+        // 先获取所有字段
         console.log(document.getElementById('number').value);
         number = document.getElementById('number').value
         name = document.getElementById('name').value
         clubname = document.getElementById('clubname').value
         ps = document.getElementById('ps').value
+        
+        // 先判断字段非空
         if(document.getElementById('number').value!="" && 
         document.getElementById('name').value!=""&&
         document.getElementById('ps').value!=""&&
         document.getElementById('clubname').value!=""){
-
+            
+            //传送到本机5010端口
             var httpRequest = new XMLHttpRequest();
             httpRequest.open('POST', 'http://127.0.0.1:5010', true); 
             httpRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -20,8 +25,6 @@ window.onload=function(){
                     console.log(json);
                 }
             };
-
-
             alert('报名成功');
         }
         else{
