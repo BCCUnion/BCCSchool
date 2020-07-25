@@ -8,7 +8,7 @@
 
 ## 完成时间
 
-2020.7.x
+2020.7.25
 
 
 
@@ -20,34 +20,44 @@
 
 ## 注意事项
 
+
+
+
+
 ## 测试流程
-1. 静态代码分析
-VSCode自检测，消除所有warning和error
+#### 静态代码分析
 
-2. 单元测试
-地图是否成功显示？（直接打开页面）
-Sport是否成功显示？（点击Sport按钮）
-Entertainment是否成功显示？（点击Entertainment按钮）
-Restaurant是否成功显示？（点击Restaurant按钮）
-Romantic spot是否成功显示？（点击Romantic spot按钮）
-导航栏功能是否正常？
-地图是否能自动聚焦返回？
-3. 集成测试
-点击其中一个Marker按钮，再点另一个按钮，其他按钮显示的地点是否会消失？
++ VSCode自检测，消除所有warning和error
 
-4. 测试用例
-单元测试：
 
-进入网页，点击Sport、点击Entertainment、点击Sport
-进入网页，点击Restaurant、点击Entertainment、点击Romatic spot
-进入网页，鼠标在地图上滑动滚轮、拖动滚轮
-集成测试：
 
-进入网页，点击Romatic spot，滑动滚轮缩小地图，再放大地图、拖动地图、点击Sport、滑动滚轮缩小地图，再放大地图、拖动地图
+#### 单元测试
+
++ 导航栏是否能够正确选择当前页面对应的菜单项
++ 页面向下滚动时功能介绍部分能否正确显示
+
++ 各个链接是否能够正确跳转
+
 
 
 ## 技术笔记
-+ 高得地图api：api
-+ material button css实现：material btn
-+ 高德地图描点：point
-+ 高德地图位置获取：position
+
+纯静态页面，通过 HTML + CSS + JavaScript 实现
+
+#### 第三方库
+
++ Bootstrap
++ JQuery
++ Animate.css
+
+
+
+#### 主页导航栏
+
+主体基于Bootstrap的导航栏、下拉菜单等组件，并进行内容以及样式的修改
+
+
+
+#### 页面滚动相关动画实现
+
+基于Animate.css实现，通过监听页面滚动事件并动态添加对应动画类名实现
