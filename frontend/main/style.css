@@ -11,7 +11,7 @@ html, body {
   min-height: 100vh;
   position: relative;
   padding-bottom: 50px;
-  min-width: 1000px;
+  min-width: 1100px;
 }
 
 .home-header {
@@ -20,6 +20,7 @@ html, body {
 
 .navbar {
   border: 0;
+  padding-top: 5px;
   margin: 0 auto;
   max-width: 1500px;
   background-color: #005925;
@@ -96,9 +97,21 @@ html, body {
 .btn-primary {
   background-color: #29533f;
   border: none;
+  transition: background-color 0.3s;
 }
+
 .btn-primary:hover {
   background-color: #05441f;
+}
+
+.mid-label {
+  height: 75px;
+  margin: 0 auto;
+  line-height: 75px;
+  font-size: 25px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
 }
 
 .service-cards-container {
@@ -155,6 +168,45 @@ html, body {
   text-align: center;
 }
 
+.service-area {
+  margin: auto;
+  max-width: 1500px;
+}
+
+.service-area .service-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.service-item .service-describe {
+  padding: 50px;
+  text-indent: 2em;
+  width: 700px;
+  font-size: 30px;
+}
+
+.service-item img{
+  width: 700px;
+  height: 500px;
+  border-radius: 3%;
+}
+
+@media screen and (max-width: 1100px) {
+  .service-area .service-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  .service-item .service-describe {
+    order: 100;
+  }
+}
+
 .home-footer {
   position: absolute;
   display: flex;
@@ -171,5 +223,4 @@ html, body {
   margin: 0 !important;
 }
 
-
-
+.service-item.animate__animated{ visibility: hidden; }
