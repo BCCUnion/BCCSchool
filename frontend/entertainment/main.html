@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=279f1ffb0526020ca41364e02b5d58ba"></script> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" type="text/javascript"></script>
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+  </head>
+  <body>
+    <div id="nav_bar"></div>
+    <div id="container">
+        
+    </div> 
+    <script>
+        var map = new AMap.Map('container', {
+            resizeEnable: true, //是否监控地图容器尺寸变化
+            zoom:17, //初始化地图层级
+            center: [113.394355,23.066222] //初始化地图中心点
+        });
+        var bounds = map.getBounds();
+        map.setLimitBounds(bounds);
+    </script>
+
+    <div id="btns">
+        <button class="type_btn" onclick="btnonclick(0);">Sport</button>
+        <button class="type_btn" onclick="btnonclick(1);">Entertainment</button>
+        <button class="type_btn" onclick="btnonclick(2);">Restaurant</button>
+        <button class="type_btn" onclick="btnonclick(3);">Romantic spot</button>
+    </div>
+
+    
+  </body>
+</html>
