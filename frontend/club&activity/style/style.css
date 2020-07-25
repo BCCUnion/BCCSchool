@@ -6,10 +6,6 @@ input[name="clubSearch"]{
     outline: none;
     border: none;
     padding: 0;
-    /* background-image: url('./imgs/lens.png');
-    background-size: 30px 30px;
-    background-repeat: no-repeat;
-    background-position: 0% 100%; */
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
 }
@@ -43,14 +39,12 @@ input[name="clubSearch"]{
 }
 
 .clubInfo{
-    /* background-color: greenyellow; */
     position: absolute;
     height: 300px;
     width: 300px;
     left: 400px;
     top: 500px;
     border:2px solid gray;
-    /* text-align: center; */
 }
 
 #activHeading{
@@ -74,7 +68,6 @@ input[name="clubSearch"]{
 }
 
 .activityInfo{
-    /* background-color: greenyellow; */
     position: absolute;
     height: 300px;
     width: 300px;
@@ -92,7 +85,6 @@ input[name="clubSearch"]{
 #bottomBox{
     position: absolute;
     width: 100%;
-    /* top: 1000px; */
     bottom: 0;
     height: 64px;
     background-color:  #005826;
@@ -122,15 +114,6 @@ input::before {
     padding: 0;
 }
 
-/* #lens{
-    height: 30px;
-    margin-top: 300px;
-    width: 30px;
-    border-radius: 10px;
-    position: absolute;
-} */
-
-
 #searchBox{
     margin: 0 auto;
     text-align: center;
@@ -138,14 +121,10 @@ input::before {
     overflow: hidden;
     width: 100%;
     height: 500px;
-    /* background-color: red;
-    opacity: 0.2; */
 }
 
 #imgList{
     float: left;
-    /* left: 0px; */
-    /* width: 100%; */
 }
 
 #searchBox:hover a{
@@ -222,7 +201,6 @@ img{
     top: 400px;
     height: 100px;
     display: none;
-    /* background-color: red; */
 }
 
 span{
