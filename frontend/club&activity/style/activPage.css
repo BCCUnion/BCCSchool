@@ -7,7 +7,6 @@
 #bottomBox{
     position: absolute;
     width: 100%;
-    /* top: 1000px; */
     bottom: 0;
     height: 64px;
     background-color:  #005826;
@@ -26,17 +25,11 @@ body{
 }
 
 .activInfo{
-    /* background-color: greenyellow; */
     position: absolute;
     height: 300px;
     width: 300px;
     border:2px solid gray;
-    /* text-align: center; */
 }
-
-/* #activ2{
-    left: 500px;
-} */
 
 .activInfoblock{
     margin-left: 30px;
