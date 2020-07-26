@@ -1,0 +1,186 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>中山大学 SUN YAT-SEN UNIVERSITY </title>
+
+<link href="../css/layout.css" rel="stylesheet" type="text/css" />
+<link href="../css/screen.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../mainslide/homepage.css">
+<link rel="stylesheet" type="text/css" href="../mainslide/jquery.css">
+<script>
+function onBodyLoad(){
+var randomnumber=Math.floor(Math.random()*100000) ;
+document.getElementById('ifmtzd').src='http://news2.sysu.edu.cn/news03/mainsysunews2.htm?new='+randomnumber;
+document.getElementById('ifzdxw').src='http://news2.sysu.edu.cn/sysunfrontnews/index.htm?new='+randomnumber;
+document.getElementById('ifky').src='http://news2.sysu.edu.cn/ky/mainsysunews4.htm?new='+randomnumber;
+document.getElementById('ifxsyg').src='http://news2.sysu.edu.cn/sysuoa/f1.html?new='+randomnumber;
+document.getElementById('ifzytz').src='http://news2.sysu.edu.cn/sysuoa/f2.html?new='+randomnumber;
+}
+</script>
+
+
+<script language="javascript">
+function switchNews(sysunews,newslist)
+{
+	for(i=1; i <3; i++)
+	{
+		if ("sysunews0"+i==sysunews)
+		{
+			document.getElementById("sysunews0"+i).className="";
+			
+		}else{
+			document.getElementById("sysunews0"+i).className="newsdown";
+			
+		}
+		if ("newslist0"+i==newslist)
+		{
+			document.getElementById(newslist).className="";
+		}else{
+			document.getElementById("newslist0"+i).className="hidecontent";
+		}
+	}
+}
+function switchMeiti(sysunews,newslist)
+{
+	for(i=3; i <5; i++)
+	{
+		if ("sysunews0"+i==sysunews)
+		{
+			document.getElementById("sysunews0"+i).className="";
+			
+		}else{
+			document.getElementById("sysunews0"+i).className="newsdown";
+			
+		}
+		if ("newslist0"+i==newslist)
+		{
+			document.getElementById(newslist).className="";
+		}else{
+			document.getElementById("newslist0"+i).className="hidecontent";
+		}
+		//document.getElementById("newslist").className="";
+	}
+}
+</script>
+
+</head>
+
+<body onload="onBodyLoad();">
+<div class="indexheader">
+	<div id="header">
+		<div class="logo"><img src="../images/logo.jpg" alt="中山大学" /></div>
+	</div>
+</div>
+<!-- header end -->
+<div class="nav">这里复用主页的导航栏</div>
+<!-- nav end -->
+
+<!-- subnav end -->
+<div id="main">
+	<div id="mainbody">
+		<div class="cols">
+			<div class="colsleft">
+			<div class="cols01">
+				<!-- xinwen start -->
+				<div class="channel_shadow">
+					<div class="channel">
+						<H3><span class="newsmore"><a href="http://news2.sysu.edu.cn">进入&gt;&gt;</a></span>
+							<span id="sysunews01" class="" onMouseOver="switchNews('sysunews01','newslist01');this.blur();">中大新闻</span> 
+							<span id="sysunews02" class="newsdown" onMouseOver="switchNews('sysunews02','newslist02');this.blur();" onClick="location='http://www.sysu.edu.cn/en/news/index.htm'">NEWS & EVENTS</span>
+						</H3>
+
+						<div id="newslist01" class="">
+							<iframe id="ifzdxw" src="" frameborder="0" scrolling="no" height="252" width="356" noresize="noresize"></iframe> 
+						</div>
+
+						<div id="newslist02" class="hidecontent">
+						<ul>
+							<li><span class="newstime">07-07</span><a href="http://www.sysu.edu.cn/en/news/new05/34238.htm" target="_blank" title="SYSU Held 2020 “Cloud Graduation Ceremony”">            SYSU Held 2020 “Cloud Graduation Ceremony”
+    						</a></li>
+							
+							<li><span class="newstime">07-06</span><a href="http://www.sysu.edu.cn/en/news/news03/34235.htm" target="_blank" title="The breakthrough of the Medical AI "Lego" Project: "Visionome" has improved the performance of diagnosing ophthalmic disorders">            The breakthrough of the Medical AI "Lego" ...
+    						</a></li>
+													
+							<li><span class="newstime">07-04</span><a href="http://www.sysu.edu.cn/en/news/news03/34233.htm" target="_blank" title="Cancer Communications: New Impact Factor (5.627), New High">            Cancer Communications: New Impact... 
+    						</a></li>
+													
+							<li><span class="newstime">07-02</span><a href="http://www.sysu.edu.cn/en/news/news02/34231.htm" target="_blank" title="Prof. Jun Cui’s team revealed a new mechanism underlying the crosstalk between innate immune responses and selective autophagy">            Prof. Jun Cui’s team revealed a n... 
+    						</a></li>
+													
+							<li><span class="newstime">06-29</span><a href="http://www.sysu.edu.cn/en/news/news02/34227.htm" target="_blank" title="Prof. Shixiao Yu’s group at School of Life Sciences made significant progress in the biodiversity maintaining mechanisms of forest communities">            Prof. Shixiao Yu’s group at Schoo... 
+    						</a></li>
+													
+							<li><span class="newstime">06-28</span><a href="http://www.sysu.edu.cn/en/news/news03/34225.htm" target="_blank" title="The collaborative research between Prof. Boxing Li at Zhongshan School of Medicine and Prof. Richard W. Tsien at New York University has recently been published in Cell">            The collaborative research betwee... 
+    						</a></li>
+													
+							<li><span class="newstime">06-26</span><a href="http://www.sysu.edu.cn/en/news/news03/34220.htm" target="_blank" title="Research advances in m6A-regulating energy metabolism of cancer cells and development of m6A editing tool by Prof. Hongsheng Wang’s group at SYSU">            Research advances in m6A-regulati... 
+    						</a></li>
+							
+							<li><span class="newstime">06-23</span><a href="http://www.sysu.edu.cn/en/news/news03/34216.htm" target="_blank" title="NET-dependent metastasis regulated by a transmembrane DNA receptor was revealed by Erwei Song’s team">            NET-dependent metastasis regulate... 
+    						</a></li>
+						</ul>
+						</div>
+				  </div>
+				</div>
+				<!-- xinwen end -->
+				<!-- meiti start -->
+
+				<div class="channel_shadow">
+					<div class="channel">
+						<H3><span class="newsmore"><a href="http://news2.sysu.edu.cn/news03/index.htm">更多&gt;&gt;</a></span>媒体中大</H3>
+						<iframe id="ifmtzd" src="" frameborder="0" scrolling="no" height="196" width="356" noresize="noresize"></iframe> 
+					</div>
+				</div>
+				<!-- meiti end -->
+			</div>
+			<div class="cols01">
+			<!-- keyan start -->
+				<div class="channel_shadow">
+					<div class="channel">
+						<H3><span class="newsmore"><a href="http://news2.sysu.edu.cn/ky" target="_blank">进入&gt;&gt;</a></span>科研专栏</H3>
+						<iframe id="ifky" frameborder="0" scrolling="no" height="112" width="356" noresize="noresize"></iframe>
+					</div>
+				</div>
+				<!-- tongzhi end -->
+				<!-- yugao start -->
+				<div class="channel_shadow">
+					<div class="channel">
+						<H3><span id="sysunews03" class="" onMouseOver="switchMeiti('sysunews03','newslist03');this.blur();">学术预告</span> <span id="sysunews04" class="newsdown" onMouseOver="switchMeiti('sysunews04','newslist04');this.blur();" onClick="location='http://www.sysu.edu.cn/en/announcements/index.htm'">ACADEMIC ANNOUNCEMENTS</span> </H3>
+						<div id="newslist03" class="">
+							<iframe id="ifxsyg"  frameborder="0" scrolling="no" height="168" width="356" noresize="noresize"></iframe> 
+						</div>
+						<div id="newslist04" class="hidecontent">
+							<ul>
+								<li><span class="newstime">01-16</span><a href="http://www.sysu.edu.cn/en/announcements/34140.htm" target="_blank" title="(Jan. 17) Integral Hodge and Tate conjectures">            (Jan. 17) Integral Hodge and Tate con... 
+	    						</a></li>
+								<li><span class="newstime">01-14</span><a href="http://www.sysu.edu.cn/en/announcements/34131.htm" target="_blank" title="(Jan. 16) Riemannian plane without conjugate points">            (Jan. 16) Riemannian plane without co... 
+	    						</a></li>
+								<li><span class="newstime">01-07</span><a href="http://www.sysu.edu.cn/en/announcements/34127.htm" target="_blank" title="(Jan. 10) Developments of Nanostructured Materials for Energy/Catalysis Applications">            (Jan. 10) Developments of Nanostructu... 
+	    						</a></li>
+								<li><span class="newstime">01-07</span><a href="http://www.sysu.edu.cn/en/announcements/34129.htm" target="_blank" title="(Jan. 10) Some results on the Landau-Lifshitz equation and related models">            (Jan. 10) Some results on the Landau-... 
+	    						</a></li>
+								<li><span class="newstime">01-07</span><a href="http://www.sysu.edu.cn/en/announcements/34128.htm" target="_blank" title="(Jan. 10) Long-time behaviour for a quasi-linear viscoelastic equation with nonlinear damping and memory ">            (Jan. 10) Long-time behaviour for a q... 
+	    						</a></li>
+																		
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+
+				<div class="channel_shadow">
+					<div class="channel">
+						<H3>重要通知</H3>
+						<iframe id="ifzytz"  frameborder="0" scrolling="no" height="112" width="356" noresize="noresize"></iframe> 
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		</div>			
+	</div>
+</div>
+
+	<div class="foot">技术支持: BBCUnion</div>
+
+</body>
