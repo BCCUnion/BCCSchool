@@ -62,7 +62,7 @@ body {
 	margin-right: 10px;
 	margin-top: 20px;
 	padding: 10px 20px;
-	height: 150px;
+	height: 176px;
 }
 .btn_qr{
 	width: 120px;
@@ -82,7 +82,7 @@ body {
 }
 
 .hide{
-	display: none;
+	display: none!important;
 }
 
 .btn_qr:hover{
@@ -91,14 +91,14 @@ body {
 
 
 .btn_qr:hover + .hide{
-	display: block;
+	display: block!important;
 }
 
 .btn-container{
 	position: relative;
 	height: 40px;
 	background-color: #F4F4F4;
-
+	bottom: 0px;
 }
 
 
