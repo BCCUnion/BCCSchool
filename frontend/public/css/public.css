@@ -3,13 +3,14 @@ body {
     margin: 0px;
 }
 
-.nav{
-	width: 100%;
+.nav_bar{
+/*	width: 100%;
 	height: 64px;
-	background-color: #005826;
 	color: #ffffff;
 	text-align: center;
-	line-height: 64px;
+	line-height: 64px;*/
+	background-color: #005826;
+	position: relative;
 }
 
 .foot{
@@ -63,7 +64,7 @@ body {
 	padding: 10px 20px;
 	height: 150px;
 }
-.btn{
+.btn_qr{
 	width: 120px;
 	height: 30px;
 	border-radius:20px;
@@ -80,16 +81,16 @@ body {
 	cursor:pointer;
 }
 
-#hide{
+.hide{
 	display: none;
 }
 
-.btn:hover{
+.btn_qr:hover{
 	background-color: #005826;
 }
 
 
-.btn:hover + #hide{
+.btn_qr:hover + .hide{
 	display: block;
 }
 
@@ -145,3 +146,89 @@ body {
 	margin-left: 100px;
 	top: 1000px;
 }
+
+/*footer*/
+.home-footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  color: white;
+  background-color: #005925;
+
+}
+
+.home-footer p {
+  margin: 0 !important;
+}
+
+/*header-nav*/
+.home-header {
+  background-color: #005925;
+}
+
+.navbar {
+  border: 0;
+  padding-top: 5px;
+  margin: 0 auto;
+  max-width: 1500px;
+  background-color: #005925;
+}
+
+.navbar-brand img {
+  cursor: pointer;
+  width: 130px;
+  position: relative;
+  bottom: 10px;
+}
+
+.navbar-brand.text {
+  cursor: pointer;
+  color: white;
+  font-size: 25px;
+}
+.navbar-brand.text:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.navbar-nav.menu .menu-item a{
+  font-size: 17px;
+  color: white !important;
+  margin-left: 10px;
+  transition: border-bottom 0.2s ease-in;
+  border-bottom: transparent 3px solid;
+  background-color: #005925;
+}
+
+.navbar-nav.menu .menu-item a:hover{
+  border-bottom: rgb(107, 143, 35) 3px solid;
+  background-color: #005925;
+}
+
+.navbar-nav.menu .menu-item.active a{
+  background-color: #005925 !important;
+  border-bottom: rgb(107, 143, 35) 3px solid;
+}
+
+.dropdown-toggle {
+  background-color: #005925 !important;
+  padding-bottom: 0px !important;
+}
+
+.navbar-nav.navbar-right .avatar {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+  background-color: grey;
+}
+
+.caret {
+  color: white;
+}
+

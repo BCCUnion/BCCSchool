@@ -22,7 +22,7 @@
 
 ## 界面展示
 
-![](./src/public.png)
+![](https://github.com/BCCUnion/BCCSchool/raw/master/frontend/public/src/public.png)
 
 ## 技术开发笔记
 
@@ -78,3 +78,33 @@
 
   采用子元素绝对定位，父元素相对定位，能够很好地适应浏览器大小的变化。
 
+## 测试流程
+
+### 静态代码分析
+
+- [W3C Markup Validation Service]( https://validator.w3.org/ ) 检查通过
+
+- [W3C CSS Validation Service]( http://jigsaw.w3.org/css-validator/ )检查通过 
+
+### 单元测试
+
+- 检测用户鼠标在各个按钮悬停时是否能正常弹出二维码
+- 检测二维码是否与卡片对应，扫描后能够跳转到正确的公众号
+
+### 集成测试
+
+- 与其他页面联动测试，检查页面能否正常跳转，单元测试功能是否正常
+
+### 测试用例
+
+中山大学总务处二维码获取
+
+中大信息技术服务帮助平台二维码获取
+
+ 中山大学校园卡二维码获取
+
+叮宝校园二维码获取
+
+中山大学服务中心USC 二维码获取
+
+小课in中大二维码获取
