@@ -80,7 +80,7 @@ body {
 	cursor:pointer;
 }
 
-#hide{
+.hide{
 	display: none;
 }
 
@@ -89,7 +89,7 @@ body {
 }
 
 
-.btn:hover + #hide{
+.btn:hover + .hide{
 	display: block;
 }
 
