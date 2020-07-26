@@ -48,17 +48,19 @@
 - hover
 
   ```css
-  .btn:hover{
+  .btn_qr:hover{
   	background-color: #005826;
   }
   
   
-  .btn:hover + #hide{
-  	display: block;
+  .btn_qr:hover + .hide{
+  	display: block!important;
   }
   ```
 
-  由于`.btn` 与 `#hide`是兄弟元素，所以使用`+`；若`#hide`是`.btn`子元素，使用空格即可。
+  由于`.btn` 与 `.hide`是兄弟元素，所以使用`+`；若`.hide`是`.btn`子元素，使用空格即可。
+
+  在CSS中，通过对某一样式声明! important ，可以更改默认的CSS样式优先级规则，使该条样式属性声明具有最高优先级。
 
 - 卡片边框及阴影
 
