@@ -1,12 +1,16 @@
+<!DOCTYPE html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=7" />
-<title>中山大学 SUN YAT-SEN UNIVERSITY </title>
+<meta charset="UTF-8">
+<title>新闻公告 </title>
 
-<link href="../css/layout.css" rel="stylesheet" type="text/css" />
-<link href="../css/screen.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="../mainslide/homepage.css">
-<link rel="stylesheet" type="text/css" href="../mainslide/jquery.css">
+<link href="./css/layout.css" rel="stylesheet" type="text/css" />
+<link href="./css/screen.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="./mainslide/homepage.css">
+<link rel="stylesheet" type="text/css" href="./mainslide/jquery.css">
+<link 
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 <script>
 function onBodyLoad(){
 var randomnumber=Math.floor(Math.random()*100000) ;
@@ -58,7 +62,6 @@ function switchMeiti(sysunews,newslist)
 		}else{
 			document.getElementById("newslist0"+i).className="hidecontent";
 		}
-		//document.getElementById("newslist").className="";
 	}
 }
 </script>
@@ -66,14 +69,47 @@ function switchMeiti(sysunews,newslist)
 </head>
 
 <body onload="onBodyLoad();">
-<div class="indexheader">
-	<div id="header">
-		<div class="logo"><img src="../images/logo.jpg" alt="中山大学" /></div>
+	<div class="nav_bar">
+		<header class="home-header">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <a class="navbar-brand logo" href="#">
+                <img alt="Brand" src="./img/logo.png">
+              </a>
+              <span class="navbar-brand text">BCCSchool</span>
+            </div>
+        
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav menu">
+                <li class="menu-item"><a href="#">主页</a></li>
+                <li class="active menu-item"><a href="#">新闻公告<span class="sr-only">(current)</span></a></li>
+                <li class="menu-item"><a href="#">站点导航</a></li>
+                <li class="menu-item"><a href="#">生活服务</a></li>
+                <li class="menu-item"><a href="#">社团服务</a></li>
+                <li class="menu-item"><a href="#">地图服务</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <img class="avatar" src="./img/avatar.png" alt=""><span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">个人设置</a></li>
+                    <li><a href="#">系统设置</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">退出登陆</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+
 	</div>
-</div>
-<!-- header end -->
-<div class="nav">这里复用主页的导航栏</div>
-<!-- nav end -->
 
 <!-- subnav end -->
 <div id="main">
@@ -84,13 +120,13 @@ function switchMeiti(sysunews,newslist)
 				<!-- xinwen start -->
 				<div class="channel_shadow">
 					<div class="channel">
-						<H3><span class="newsmore"><a href="http://news2.sysu.edu.cn">进入&gt;&gt;</a></span>
+						<H3 class = "changeH3"><span class="newsmore"><a href="http://news2.sysu.edu.cn">进入&gt;&gt;</a></span>
 							<span id="sysunews01" class="" onMouseOver="switchNews('sysunews01','newslist01');this.blur();">中大新闻</span> 
 							<span id="sysunews02" class="newsdown" onMouseOver="switchNews('sysunews02','newslist02');this.blur();" onClick="location='http://www.sysu.edu.cn/en/news/index.htm'">NEWS & EVENTS</span>
 						</H3>
 
 						<div id="newslist01" class="">
-							<iframe id="ifzdxw" src="" frameborder="0" scrolling="no" height="252" width="356" noresize="noresize"></iframe> 
+							<iframe id="ifzdxw" frameborder="0" scrolling="no" height="252" width="356"></iframe> 
 						</div>
 
 						<div id="newslist02" class="hidecontent">
@@ -98,7 +134,7 @@ function switchMeiti(sysunews,newslist)
 							<li><span class="newstime">07-07</span><a href="http://www.sysu.edu.cn/en/news/new05/34238.htm" target="_blank" title="SYSU Held 2020 “Cloud Graduation Ceremony”">            SYSU Held 2020 “Cloud Graduation Ceremony”
     						</a></li>
 							
-							<li><span class="newstime">07-06</span><a href="http://www.sysu.edu.cn/en/news/news03/34235.htm" target="_blank" title="The breakthrough of the Medical AI "Lego" Project: "Visionome" has improved the performance of diagnosing ophthalmic disorders">            The breakthrough of the Medical AI "Lego" ...
+							<li><span class="newstime">07-06</span><a href="http://www.sysu.edu.cn/en/news/news03/34235.htm" target="_blank" title="The breakthrough of the Medical AI &quotLego&quot Project: &quotVisionome&quot has improved the performance of diagnosing ophthalmic disorders">            The breakthrough of the Medical AI "Lego" ...
     						</a></li>
 													
 							<li><span class="newstime">07-04</span><a href="http://www.sysu.edu.cn/en/news/news03/34233.htm" target="_blank" title="Cancer Communications: New Impact Factor (5.627), New High">            Cancer Communications: New Impact... 
@@ -127,8 +163,8 @@ function switchMeiti(sysunews,newslist)
 
 				<div class="channel_shadow">
 					<div class="channel">
-						<H3><span class="newsmore"><a href="http://news2.sysu.edu.cn/news03/index.htm">更多&gt;&gt;</a></span>媒体中大</H3>
-						<iframe id="ifmtzd" src="" frameborder="0" scrolling="no" height="196" width="356" noresize="noresize"></iframe> 
+						<H3 class = "changeH3"><span class="newsmore"><a href="http://news2.sysu.edu.cn/news03/index.htm">更多&gt;&gt;</a></span>媒体中大</H3>
+						<iframe id="ifmtzd"  frameborder="0" scrolling="no" height="196" width="356" ></iframe> 
 					</div>
 				</div>
 				<!-- meiti end -->
@@ -137,15 +173,15 @@ function switchMeiti(sysunews,newslist)
 			<!-- keyan start -->
 				<div class="channel_shadow">
 					<div class="channel">
-						<H3><span class="newsmore"><a href="http://news2.sysu.edu.cn/ky" target="_blank">进入&gt;&gt;</a></span>科研专栏</H3>
-						<iframe id="ifky" frameborder="0" scrolling="no" height="112" width="356" noresize="noresize"></iframe>
+						<H3 class = "changeH3"><span class="newsmore"><a href="http://news2.sysu.edu.cn/ky" target="_blank">进入&gt;&gt;</a></span>科研专栏</H3>
+						<iframe id="ifky" frameborder="0" scrolling="no" height="112" width="356"></iframe>
 					</div>
 				</div>
 				<!-- tongzhi end -->
 				<!-- yugao start -->
 				<div class="channel_shadow">
 					<div class="channel">
-						<H3><span id="sysunews03" class="" onMouseOver="switchMeiti('sysunews03','newslist03');this.blur();">学术预告</span> <span id="sysunews04" class="newsdown" onMouseOver="switchMeiti('sysunews04','newslist04');this.blur();" onClick="location='http://www.sysu.edu.cn/en/announcements/index.htm'">ACADEMIC ANNOUNCEMENTS</span> </H3>
+						<H3 class = "changeH3"><span id="sysunews03" class="" onMouseOver="switchMeiti('sysunews03','newslist03');this.blur();">学术预告</span> <span id="sysunews04" class="newsdown" onMouseOver="switchMeiti('sysunews04','newslist04');this.blur();" onClick="location='http://www.sysu.edu.cn/en/announcements/index.htm'">ACADEMIC ANNOUNCEMENTS</span> </H3>
 						<div id="newslist03" class="">
 							<iframe id="ifxsyg"  frameborder="0" scrolling="no" height="168" width="356" noresize="noresize"></iframe> 
 						</div>
@@ -170,7 +206,7 @@ function switchMeiti(sysunews,newslist)
 
 				<div class="channel_shadow">
 					<div class="channel">
-						<H3>重要通知</H3>
+						<H3 class = "changeH3">重要通知</H3>
 						<iframe id="ifzytz"  frameborder="0" scrolling="no" height="112" width="356" noresize="noresize"></iframe> 
 					</div>
 				</div>
@@ -180,7 +216,14 @@ function switchMeiti(sysunews,newslist)
 		</div>			
 	</div>
 </div>
-
-	<div class="foot">技术支持: BBCUnion</div>
-
+	<footer class="home-footer">
+        <p>中山大学 © 2020 | 技术支持：BCCShool 
+          <button type="button" class="btn btn-default btn-xs">
+            <a target="_blank" href="https://github.com/BCCUnion/BCCSchool">
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
+            </a>
+          </button>
+      </p>
+    </footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>

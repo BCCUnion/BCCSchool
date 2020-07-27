@@ -1,5 +1,4 @@
 body{
-	font-family: Arial,sans-serif;
 	color: #000000;
 	font-size: 12px;
 	margin: 0px;
@@ -40,7 +39,7 @@ a:hover{
 }
 H1{font-size:18px;
 color:#000000;
-font-family:SimHei,Arial, Helvetica, sans-serif;
+font-family:SimHei,  sans-serif;
 padding:5px 0px;
 margin:0px;
 }
@@ -77,7 +76,6 @@ H5{
 padding:0px 0px 10px 0px;
 margin:0px 0px 0px 0px;
 color:#006600;
-font-family:Arial, Helvetica, sans-serif;
 font-size:16px;
 font-weight:bold;
 }
@@ -86,7 +84,6 @@ padding:0px;
 margin:10px 0px 10px 5px;
 font-size:18px;
 font-weight:bold;
-font-family:Arial, Helvetica, sans-serif;
 color:#006600;
 }
 HR{
@@ -105,7 +102,6 @@ ol,ul{margin:0px;padding:0px;}
 /********************* head  ***********************************/
 .logo{
 bottom:10px;
-position:absolute;
 left:10px;
 }
 .version{
@@ -460,7 +456,7 @@ margin:10px 0px 10px 5px;
 _margin:15px 0px 10px 5px;
 font-size:18px;
 font-weight:normal;
-font-family:Simhei,Arial, Helvetica, sans-serif;
+font-family:Simhei,  sans-serif;
 color:#006600;
 }
 .cncont{
@@ -471,7 +467,6 @@ padding:15px 20px;
 	background:#FFFFFF;
 	min-height:100px;
 	line-height:28px;
-	_height:expression((document.documentElement.clientHeight||document.body.clientHeight)>100?"100px":"")
 }
 .cncont a:active, .cncont a:link, .cncont a:visited{
 	font-size:12px;
@@ -490,7 +485,7 @@ font-weight:normal;
 color:#006600;
 margin:0px 0px 20px 0px;
 text-align:center;
-font-family:SimHei,Arial, Helvetica, sans-serif;
+font-family:SimHei,  sans-serif;
 }
 .mcont{
 padding:15px 20px;
@@ -501,7 +496,6 @@ padding:15px 20px;
 	min-height:100px;
 	line-height:28px;
 	    font-size:14px;
-	_height:expression((document.documentElement.clientHeight||document.body.clientHeight)>100?"100px":"")
 }
 .mcont a:active, .mcont a:link, .mcont a:visited{
 	color: #336600;
@@ -518,7 +512,7 @@ font-weight:normal;
 color:#006600;
 margin:0px 0px 20px 0px;
 text-align:center;
-font-family:SimHei,Arial, Helvetica, sans-serif;
+font-family:SimHei,  sans-serif;
 }
 .listimg IMG{
 border:1px #CCCCCC solid;
@@ -527,7 +521,6 @@ margin:5px 5px;
 background:#FFFFFF;
 MAX-WIDTH: 210px!important;
 HEIGHT: auto!important;
-width:expression(this.width > 210 ? "210px" : this.width)!important;
 }
 #cont h1{
 padding:0px 0px;
@@ -536,7 +529,7 @@ font-weight:normal;
 color:#006600;
 margin:0px 0px 20px 0px;
 text-align:center;
-font-family:SimHei,Arial, Helvetica, sans-serif;
+font-family:SimHei, sans-serif;
 }
 #cont h2{
 padding:0px 0px;
@@ -544,7 +537,7 @@ font-size:18px;
 font-weight:normal;
 color:#006600;
 margin:0px 0px 20px 0px;
-font-family:SimHei,Arial, Helvetica, sans-serif;
+font-family:SimHei,  sans-serif;
 }
 
 #cont {
@@ -556,7 +549,6 @@ font-family:SimHei,Arial, Helvetica, sans-serif;
 	background:#FFFFFF;
 	min-height:240px;
 	line-height:28px;
-	_height:expression((document.documentElement.clientHeight||document.body.clientHeight)>240?"240px":"");
 }
 .contenttime{
 margin:0px 0px 15px 0px;
@@ -589,7 +581,6 @@ line-height:28px;}
 line-height:28px;
 font-size:14px;
 padding:10px 0px;
-font:Arial, Helvetica, sans-serif;
 font-weight:normal;
 }
 .members UL{
@@ -606,7 +597,6 @@ margin:5px;
 line-height:28px;
 font-size:14px;
 padding:10px 0px;
-font:Arial, Helvetica, sans-serif;
 font-weight:normal;
 }
 .cnmembers UL{
@@ -778,7 +768,7 @@ float:left;
 width:260px;
 height:40px;
 padding:2px 20px 5px 20px;
-line-height:24px;
+line-height:4px;
 border-right:#FFFFFF 1px solid;
 float:left;
 }
@@ -881,7 +871,6 @@ list-style:none;
 	min-height:240px;
 	line-height:22px;
 	font-size:14px;
-	_height:expression((document.documentElement.clientHeight||document.body.clientHeight)>240?"240px":"");
 }
 .encontenttime{
 margin:0px 0px 15px 0px;
@@ -896,7 +885,6 @@ font-size:20px;
 font-weight:bold;
 color:#006600;
 margin:0px 0px 8px 0px;
-font-family:Arial, Helvetica, sans-serif;
 }
 .enconth2{
 padding:0px 0px;
@@ -904,7 +892,6 @@ font-size:16px;
 font-weight:bold;
 color:#006600;
 margin:0px 0px 8px 0px;
-font-family:Arial, Helvetica, sans-serif;
 }
 .enconth2_leader{
 padding:0px 0px;
@@ -913,7 +900,6 @@ font-weight:bold;
 color:#000000;
 margin:0px 0px 8px 0px;
 line-height:28px;
-font-family:Arial, Helvetica, sans-serif;
 }
 .enconth3{
 padding:0px 0px 10px 0px;
@@ -922,7 +908,6 @@ color:#006600;
 line-height:28px;
 font-size:14px;
 font-weight:bold;
-font-family:Arial, Helvetica, sans-serif;
 background:url(../images/line.gif) repeat-x bottom;
 }
 .encont a:active, .encont a:link, .encont a:visited{
@@ -939,7 +924,6 @@ background:url(../images/line.gif) repeat-x bottom;
 line-height:28px;
 font-size:14px;
 padding:0px 0px;
-font:Arial, Helvetica, sans-serif;
 font-weight:normal;
 margin:0px 0px 0px 20px;
 }
@@ -957,7 +941,6 @@ margin:0px;
 line-height:28px;
 font-size:14px;
 padding:0px 0px;
-font:Arial, Helvetica, sans-serif;
 font-weight:normal;
 margin:0px 0px 0px 20px;
 }
