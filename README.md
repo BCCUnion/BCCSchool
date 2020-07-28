@@ -9,7 +9,7 @@
 - 张伟焜：NO.2 Public
 - 杨泽涛：NO.3 Community
 - 左杰文：NO.4 SchoolPlace
-- 张涵健：[NO.5 Entertainment](frontend/entertainment/README.md)
+- 张涵健：NO.5 Entertainment
 - 徐肯：NO.6 Main
 - 张昊：NO.7 Backend
 - 朱龙威：NO.8 Design & Integration
