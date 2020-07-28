@@ -12,12 +12,12 @@
     background-color:  #005826;
 }
 
-.logo{
+/* .logo{
     float: right;
     position: absolute;
     right: 5px;
     top: 5px;
-}
+} */
 
 body{
     margin: 0;
@@ -26,8 +26,8 @@ body{
 
 .activInfo{
     position: absolute;
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 350px;
     border:2px solid gray;
 }
 

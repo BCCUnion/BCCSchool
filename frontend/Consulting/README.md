@@ -36,7 +36,7 @@
 
 	新闻模块有两个部分，分别是中大新闻和 NEWS & EVENTS，在span的onMouseOver属性调用js函数switchNews进行页面转换，switchNews函数如下：
 
-	```css
+```css
 	function switchNews(sysunews,newslist)
 	{
 		for(i=1; i <3; i++)
@@ -57,7 +57,8 @@
 			}
 		}
 	}
-	```
+
+```
 
 - 阴影分隔线的实现
 
@@ -77,3 +78,37 @@
 	```css
 	<iframe id="ifmtzd" src="" frameborder="0" scrolling="no" height="196" width="356" noresize="noresize"></iframe> 
 	```
+
+
+## 测试流程
+
+### 静态代码分析
+
+- [W3C Markup Validation Service]( https://validator.w3.org/ ) 检查通过
+
+- [W3C CSS Validation Service]( http://jigsaw.w3.org/css-validator/ )检查通过 
+
+### 单元测试
+
+- 检测用户鼠标在各个按钮悬停时是否能正常切换子页面
+- 检测点击更多是否能跳转到中大新闻网
+- 检测点击新闻能否跳转到详情
+
+测试结果：
+
+- 鼠标悬停在“中大新闻”和“NEWS&EVENTS”标题时，模块内可分别显示中文和英文的中大新闻子页；悬停在“学术预告”和“ACADEMIC ANNOUNCEMENTS”标题时，模块内可分别显示中文和英文的预告
+- 点击更多和进入按钮会跳转到中山大学新闻网
+- 点击“中大新闻”、“科研专栏”和“媒体中大”标题下的文章题目可以跳转到中山大学新闻网的对应新闻，点击“NEWS&EVENTS”标题下的文章题目会跳转到中山大学英文版网页新闻，点击“学术预告”标题下的文章标题可以查看对应讲座或访谈的通知，点击“ACADEMIC ANNOUNCEMENTS”下文章标题显示英文版讲座通知，点击“重要通知”下文章标题显示通知原文。
+- 鼠标悬停在文章标题显示文章全名
+
+
+### 集成测试
+
+- 与其他页面联动测试，检查页面能否正常跳转，单元测试功能是否正常
+
+### 测试用例
+
+- 鼠标分别悬停到“中大新闻”和“NEWS & EVENTS”上
+- 鼠标分别悬停到“学术预告”和“ACADEMIC ANNOUNCEMENTS”
+- 点击“更多”和“进入”按钮
+- 随机点击每个模块中的新闻标题

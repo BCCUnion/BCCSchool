@@ -4,7 +4,8 @@ window.onload = function(){
     windoWidth = parseInt(window.screen.width)
     blocks = document.getElementsByClassName('clubInfo');
     for(var i =0;i<blocks.length;i++){
-        blocks[i].style.left = (windoWidth-450)/2*(i%3) + 50 + 'px';
+        blocks[i].style.left = ((windoWidth-350*3)/4+350)*(i%3) + (windoWidth-350*3)/4 + 'px';
+        // blocks[i].style.left = (windoWidth-450)/2*(i%3) + 50 + 'px';
         blocks[i].style.top = parseInt(i/3) * 400 + 80 +'px';
     }
     

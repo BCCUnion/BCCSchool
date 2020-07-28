@@ -34,7 +34,7 @@ body{
     height: 300px;
 }
 
-button{
+.mysubmit{
     display: block;
     margin: 0 auto;
     margin-top: 15px;
