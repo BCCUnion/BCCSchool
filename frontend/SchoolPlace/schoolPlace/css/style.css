@@ -39,11 +39,13 @@ body {
 	z-index: 100;
 	margin-top: 25px;
 	background-color: white;
+	display: none;
 }
 #choosearound {
 	z-index: 100;
 	margin-top: 25px;
 	background-color: white;
+	display: none;
 }
 
 #menuBlock {
