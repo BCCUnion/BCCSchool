@@ -15,9 +15,6 @@
 <body>
 	<div id="menuBlock">
 		<input id="searchinput" type="text" placeholder="输入查询地址" autocomplete="on" />
-		<datalist id="history">
-			<option value="1"></option>
-		</datalist>
 		<input id="searchbu" type="submit" value="" onclick="search" autocomplete="on"/>
 		<label id="choosein">
 			<input id="poin" type="radio" name="choose" value="校内" checked="true" />校内
@@ -70,7 +67,16 @@
 								//console.log("find")
 								//map.centerAndZoom(point,20)
 								//marker[i].setAnimation(BMAP_ANIMATION_BOUNCE);
+								//map.addOverlay(marker[i])
+								var point = new window.BMap.Point(p0, p1); //循环生成新的地图点
+								marker[i] = new window.BMap.Marker(point); //按照地图点坐标生成标记
+								//map.addOverlay(marker[i]);
+								//marker[i].setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+		　　　　　　　　　　　　　　//显示marker的title，marker多的话可以注释掉
+								var label = new window.BMap.Label(markerArr[i].title, { offset: new window.BMap.Size(20, -10) });
+								marker[i].setLabel(label);
 								map.addOverlay(marker[i])
+								//showPosition(i)
 							}
 						}
 						if(minx!=-1) {
@@ -86,10 +92,15 @@
 				
 				function hidelayout() {
 					map.clearOverlays()
-					
 				}
 				
 				function showPosition(i) {
+					marker[i] = new window.BMap.Marker(point[i]); //按照地图点坐标生成标记
+					//map.addOverlay(marker[i]);
+					marker[i].setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+　　　　　　　　　　　　//显示marker的title，marker多的话可以注释掉
+					var label = new window.BMap.Label(markerArr[i].title, { offset: new window.BMap.Size(20, -10) });
+					marker[i].setLabel(label);
 					map.addOverlay(marker[i])
 					
 				}
