@@ -42,8 +42,7 @@ input[name="clubSearch"]{
     position: absolute;
     height: 250px;
     width: 300px;
-    left: 400px;
-    top: 500px;
+    /* left: 400px; */
     border:2px solid gray;
 }
 
@@ -71,8 +70,7 @@ input[name="clubSearch"]{
     position: absolute;
     height: 250px;
     width: 300px;
-    right: 400px;
-    top: 500px;
+    /* right: 400px; */
     border:2px solid gray;
 }
 

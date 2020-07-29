@@ -35,6 +35,20 @@ window.onload=function(){
         alert(answer);
     }
 
+    extraTop = 50 + parseInt(document.getElementById('bs-example-navbar-collapse-1').style.height) + parseInt(document.getElementById('imgList').style.height)
+
+    document.getElementsByClassName('clubInfo')[0].style.top = extraTop + "px";
+
+    extraTop = 50 + parseInt(document.getElementById('bs-example-navbar-collapse-1').style.height) + parseInt(document.getElementById('imgList').style.height)
+
+    document.getElementsByClassName('activityInfo')[0].style.top = extraTop + "px";
+
+    Space = parseInt(window.screen.width - 600)/3
+
+    document.getElementsByClassName('clubInfo')[0].style.left = Space + "px";
+    document.getElementsByClassName('activityInfo')[0].style.left = Space + 600 + "px";
+
+
     document.getElementsByName('clubSearch')[0].onkeypress = function(e){
         if(e.keyCode==13){
             t();
