@@ -1,4 +1,4 @@
-# NO.6 Entertainment Map
+# NO.5 Entertainment Map
 
 > - Author: 张涵健
 > - Sid: 17343147
@@ -13,7 +13,7 @@
 
 ## 注意事项
 
-[ ] 需要完善导航栏(地址填写)
+[ x ] 需要完善导航栏(地址填写)
 
 ## 技术笔记
 

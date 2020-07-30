@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- 原作博客地址：http://blog.csdn.net/a497785609/article/details/24009031 -->
+    <!--css-->
+    <link href="style/demo.css" rel="stylesheet" type="text/css" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!--javascript-->
+    <script src="scripts/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="scripts/demo.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=IDvNBsejl9oqMbPF316iKsXR"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />    
+</head>
+<body>
+	<div id="menuBlock">
+		<input id="searchinput" type="text" placeholder="输入查询地址" autocomplete="on" />
+		<input id="searchbu" type="submit" value="" onclick="search" autocomplete="on"/>
+		<label id="choosein">
+			<input id="poin" type="radio" name="choose" value="校内" checked="true" />校内
+		</label>
+		<label id="choosearound">
+			<input id="poaround" type="radio" name="choose" value="周边" />周边
+		</label>
+	</div>
+    <div class="demo_main">
+        <fieldset class="demo_content">
+            <div style="height: 100vh; width: 100%;" id="map">
+            </div>
+            <script type="text/javascript">
+				var inputtext=document.getElementById('searchinput')
+				var bu=document.getElementById('searchbu')
+				var chos=document.getElementById('poin')
+				bu.onclick=function() {
+					console.log(inputtext.value+" "+chos.checked)
+					if(chos.checked==true&&inputtext.value.length!=0) {
+						hidelayout()
+						var minx=-1
+						var maxx=-1
+						var miny=-1
+						var maxy=-1
+						for(var i=0;i<markerArr.length;i++) {
+							if(markerArr[i].title==inputtext.value||markerArr[i].title.indexOf(inputtext.value)!=-1) {
+								var json = markerArr[i];
+								var p0 = json.point.split("|")[0];
+								var p1 = json.point.split("|")[1];
+								//console.log("find: "+p0+" "+p1)
+								if(minx==-1) {
+									minx=p0
+									maxx=p0
+									miny=p1
+									maxy=p1
+								} else {
+									if(p0<minx) {
+										minx=p0
+									}
+									if(p0>maxx) {
+										maxx=p0
+									}
+									if(p1<miny) {
+										miny=p1
+									}
+									if(p1>maxy) {
+										maxy=p1
+									}
+								}
+								//console.log("find")
+								//map.centerAndZoom(point,20)
+								//marker[i].setAnimation(BMAP_ANIMATION_BOUNCE);
+								//map.addOverlay(marker[i])
+								var point = new window.BMap.Point(p0, p1); //循环生成新的地图点
+								marker[i] = new window.BMap.Marker(point); //按照地图点坐标生成标记
+								//map.addOverlay(marker[i]);
+								//marker[i].setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+		　　　　　　　　　　　　　　//显示marker的title，marker多的话可以注释掉
+								var label = new window.BMap.Label(markerArr[i].title, { offset: new window.BMap.Size(20, -10) });
+								marker[i].setLabel(label);
+								map.addOverlay(marker[i])
+								//showPosition(i)
+							}
+						}
+						if(minx!=-1) {
+							//console.log(minx+" "+maxx+" "+miny+" "+maxy)
+							var point = new BMap.Point((parseFloat(minx)+parseFloat(maxx))/2, (parseFloat(miny)+parseFloat(maxy))/2)
+							map.centerAndZoom(point,20)
+							//console.log("po: "+(minx+maxx)/2+" "+(miny+maxy)/2)
+						} else {
+							alert("没有找到该建筑")
+						}
+					}
+				}
+				
+				function hidelayout() {
+					map.clearOverlays()
+				}
+				
+				function showPosition(i) {
+					marker[i] = new window.BMap.Marker(point[i]); //按照地图点坐标生成标记
+					//map.addOverlay(marker[i]);
+					marker[i].setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+　　　　　　　　　　　　//显示marker的title，marker多的话可以注释掉
+					var label = new window.BMap.Label(markerArr[i].title, { offset: new window.BMap.Size(20, -10) });
+					marker[i].setLabel(label);
+					map.addOverlay(marker[i])
+					
+				}
+				
+                var markerArr = [
+						  {title:"北学院楼D",content:"我的备注",point:"113.394955|23.073903",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+                		 ,{title:"北学院楼C",content:"我的备注",point:"113.395296|23.07421",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+                		 ,{title:"北学院楼A",content:"我的备注",point:"113.39623|23.074875",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+                		 ,{title:"北学院楼B",content:"我的备注",point:"113.395952|23.074526",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+                		 ,{title:"咨询管理学院B",content:"我的备注",point:"113.395781|23.074326",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+                		 ,{title:"行政会议中心",content:"我的备注",point:"113.397537|23.075158",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"公共教学楼A",content:"我的备注",point:"113.399478|23.075681",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"公共教学楼B",content:"我的备注",point:"113.399415|23.075232",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"公共教学楼C",content:"我的备注",point:"113.399433|23.07485",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"公共教学楼D",content:"我的备注",point:"113.399451|23.074484",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"公共教学楼E",content:"我的备注",point:"113.399469|23.074069",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"图书馆",content:"我的备注",point:"113.398373|23.073362",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"知识产权学院",content:"我的备注",point:"113.396441|23.07308",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"管理学院",content:"我的备注",point:"113.396828|23.072764",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"无人系统研究所",content:"我的备注",point:"113.396019|23.072731",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"心理学系学院",content:"我的备注",point:"113.395741|23.072531",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"全媒体研究所",content:"我的备注",point:"113.395157|23.07219",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"传播与设计学院",content:"我的备注",point:"113.395372|23.071941",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"实验楼D",content:"我的备注",point:"113.394555|23.071517",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"南实验楼",content:"我的备注",point:"113.39416|23.071126",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"实验楼F",content:"我的备注",point:"113.393423|23.070794",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"海洋学院",content:"我的备注",point:"113.3916|23.07047",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"工学院",content:"我的备注",point:"113.392201|23.070445",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"广东省教育厅太阳能重点实验室",content:"我的备注",point:"113.392165|23.069996",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"假草运动场",content:"我的备注",point:"113.395274|23.070328",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"排球场",content:"我的备注",point:"113.396414|23.070752",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"篮球场",content:"我的备注",point:"113.397367|23.071002",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"游泳馆",content:"我的备注",point:"113.396495|23.071575",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"真草运动场",content:"我的备注",point:"113.400178|23.071791",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"北牌坊",content:"我的备注",point:"113.398049|23.07741",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"电子与信息工程学院",content:"我的备注",point:"113.399568|23.07766",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"国家保密学院",content:"我的备注",point:"113.399945|23.077876",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"纳米尺度材料实验楼",content:"我的备注",point:"113.401625|23.077676",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"生命科学实验楼",content:"我的备注",point:"113.401966|23.077053",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"实验动物中心",content:"我的备注",point:"113.401544|23.076122",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"教师公寓",content:"我的备注",point:"113.394375|23.06717",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"格致园2号",content:"我的备注",point:"113.394187|23.066937",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"格致园3号",content:"我的备注",point:"113.394465|23.066629",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"明德园1号",content:"我的备注",point:"113.397259|23.069514",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"明德园2号",content:"我的备注",point:"113.396909|23.06919",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"明德园3号",content:"我的备注",point:"113.397259|23.06899",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"明德园4号",content:"我的备注",point:"113.397034|23.068491",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"明德园5号",content:"我的备注",point:"113.397439|23.068541",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"明德园6号",content:"我的备注",point:"113.396046|23.068658",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"中大服务部",content:"我的备注",point:"113.394959|23.067668",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"明德园7号",content:"我的备注",point:"113.397412|23.068109",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"明德园8号",content:"我的备注",point:"113.396998|23.068084",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"明德园9号",content:"我的备注",point:"113.397483|23.067643",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"明德园10号",content:"我的备注",point:"113.396971|23.06761",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"第三饭堂",content:"我的备注",point:"113.397582|23.065981",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"第四饭堂",content:"我的备注",point:"113.397492|23.066338",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"第一饭堂",content:"我的备注",point:"113.397367|23.06702",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"第二饭堂",content:"我的备注",point:"113.396944|23.066995",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"至善园1号",content:"我的备注",point:"113.399226|23.066654",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"至善园2号",content:"我的备注",point:"113.398418|23.066546",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"至善园3号",content:"我的备注",point:"113.399271|23.066122",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"至善园4号",content:"我的备注",point:"113.398409|23.066014",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"至善园5号",content:"我的备注",point:"113.399334|23.06559",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"至善园6号",content:"我的备注",point:"113.398624|23.065557",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"至善园7号",content:"我的备注",point:"113.399406|23.065017",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"至善园8号",content:"我的备注",point:"113.398669|23.06495",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"至善园9号",content:"我的备注",point:"113.399433|23.064485",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"至善园10号",content:"我的备注",point:"113.398795|23.06441",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"慎思园5号",content:"我的备注",point:"113.39716|23.065208",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"慎思园6号",content:"我的备注",point:"113.396711|23.064817",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"慎思园7号",content:"我的备注",point:"113.397609|23.064776",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"慎思园8号",content:"我的备注",point:"113.397034|23.064443",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"慎思园9号",content:"我的备注",point:"113.397897|23.064302",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 ,{title:"慎思园10号",content:"我的备注",point:"113.397385|23.063986",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+						 
+						];
+				var marker = new Array(); //存放标注点对象的数组
+                function map_init() {
+                    var map = new BMap.Map("map"); // 创建Map实例
+					window.map = map
+                    var point = new BMap.Point(113.40043,23.070528); //地图中心点，广州市
+                    map.centerAndZoom(point, 16); // 初始化地图,设置中心点坐标和地图级别。
+                    map.enableScrollWheelZoom(true); //启用滚轮放大缩小
+                    //地图、卫星、混合模式切换
+                    map.addControl(new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP, BMAP_SATELLITE_MAP, BMAP_HYBRID_MAP]}));
+                    //向地图中添加缩放控件
+                    var ctrlNav = new window.BMap.NavigationControl({
+                        anchor: BMAP_ANCHOR_TOP_LEFT,
+                        type: BMAP_NAVIGATION_CONTROL_LARGE
+                    });
+                    map.addControl(ctrlNav);
+                    //向地图中添加缩略图控件
+                    var ctrlOve = new window.BMap.OverviewMapControl({
+                        anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+                        isOpen: 1
+                    });
+                    map.addControl(ctrlOve);
+                    //向地图中添加比例尺控件
+                    var ctrlSca = new window.BMap.ScaleControl({
+                        anchor: BMAP_ANCHOR_BOTTOM_LEFT
+                    });
+                    map.addControl(ctrlSca);
+ 
+                    var point = new Array(); //存放标注点经纬信息的数组
+                    
+                    var info = new Array(); //存放提示信息窗口对象的数组
+                    var searchInfoWindow =new Array();//存放检索信息窗口对象的数组
+                    for (var i = 0; i < markerArr.length; i++) {
+                        var json = markerArr[i];
+                        var p0 = json.point.split("|")[0];
+                        var p1 = json.point.split("|")[1];
+                        point[i] = new window.BMap.Point(p0, p1); //循环生成新的地图点
+                        marker[i] = new window.BMap.Marker(point[i]); //按照地图点坐标生成标记
+                        //map.addOverlay(marker[i]);
+                        marker[i].setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+　　　　　　　　　　　　　　//显示marker的title，marker多的话可以注释掉
+                        var label = new window.BMap.Label(markerArr[i].title, { offset: new window.BMap.Size(20, -10) });
+                        marker[i].setLabel(label);
+                        // 创建信息窗口对象
+                        info[i] = "<p style=’font-size:12px;lineheight:1.8em;’>" + "</br>地址：" + markerArr[i].address + "</br> 电话：" + markerArr[i].tel + "</br></p>";
+                        //创建百度样式检索信息窗口对象                       
+                        searchInfoWindow[i] = new BMapLib.SearchInfoWindow(map, info[i], {
+                                title  : markerArr[i].title,      //标题
+                                width  : 290,             //宽度
+                                height : 55,              //高度
+                                panel  : "panel",         //检索结果面板
+                                enableAutoPan : true,     //自动平移
+                                searchTypes   :[
+                                    BMAPLIB_TAB_SEARCH,   //周边检索
+                                    BMAPLIB_TAB_TO_HERE,  //到这里去
+                                    BMAPLIB_TAB_FROM_HERE //从这里出发
+                                ]
+                            });
+                        //添加点击事件
+                        /*marker[i].addEventListener("click", 
+                            (function(k){
+                                // js 闭包
+                                return function(){
+                                    //将被点击marker置为中心
+                                    //map.centerAndZoom(point[k], 18);
+                                    //在marker上打开检索信息窗口
+                                    searchInfoWindow[k].open(marker[k]);
+                                }
+                            })(i)                            
+                        ); */
+                    }                  
+                }
+                //异步调用百度js
+                function map_load() {
+                    var load = document.createElement("script");
+                    load.src = "http://api.map.baidu.com/api?v=2.0&ak=IDvNBsejl9oqMbPF316iKsXR&callback=map_init";
+                    document.body.appendChild(load);
+                }
+                window.onload = map_load;
+            </script>
+        </fieldset>
+    </div>
+</body>
+</html>
