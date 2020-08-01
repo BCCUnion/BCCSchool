@@ -38,4 +38,16 @@ Fast-forward
  create mode 100644 "frontend/Website/\346\212\200\346\234\257\345\274\200\345\217\221\347\254\224\350\256\260.md"
 ```
 
-### 
+### ip访问测试
+#### 主页链接
+- `http://120.79.67.250/BCCSchool/frontend/main/`
+![](https://s1.ax1x.com/2020/08/01/aG3aes.png)
+#### 新闻公告
+![](https://s1.ax1x.com/2020/08/01/aG3H6e.png)
+#### 站点导航
+![](https://s1.ax1x.com/2020/08/01/aG8C6g.png)
+#### 生活服务
+![](https://s1.ax1x.com/2020/08/01/aG8Fmj.png)
+#### 校内导航
+![](https://s1.ax1x.com/2020/08/01/aG8Vkq.png)
+
